@@ -1,17 +1,18 @@
 
-function accionPlay() {
-  var reproducir = new Audio();
-  reproducir.src =
-   "https://static.wixstatic.com/mp3/cc320b_74d5db1d9a074271ac11a0fe043d86cf.mp3";
-  reproducir.play();
-  reproducir.loop = true;
-  reproducir.controls = true;
- }
 
- function stopAudio(audio) {
-    audio.pause();
-    audio.currentTime = 0;
-}
+function audioplay() {
+       var audio = document.getElementById("audio1");
+       var button = document.getElementById("play");
+       if (audio.paused) {
+          audio.play();
+          audio.loop = true;
+       } else {
+          audio.pause();
+          
+       }
+    }
+
+
 
 
 
@@ -174,12 +175,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startBtn.addEventListener('click', () => {
     if (timerId) {
-      stopAudio(audio)
+      
       clearInterval(timerId)
       timerId = null
       
     } else {
-      accionPlay()
+     
       draw()
       timerId = setInterval(moveDown, 1000)
       nextRandom = Math.floor(Math.random() * theTetrominoes.length)
