@@ -1,3 +1,0 @@
-# Fletris
-
-MEGA FLETRIS
