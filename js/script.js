@@ -13,7 +13,8 @@ function accionPlay() {
    reproducir.src =
     "https://static.wixstatic.com/mp3/cc320b_74d5db1d9a074271ac11a0fe043d86cf.mp3";
    reproducir.pause();
-      reproducir.controls = true;
+   reproducir.loop = false;
+      reproducir.controls = false;
   }
 
 
