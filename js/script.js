@@ -8,14 +8,10 @@ function accionPlay() {
   reproducir.controls = true;
  }
 
- function accionPause() {
-   var reproducir = new Audio();
-   reproducir.src =
-    "https://static.wixstatic.com/mp3/cc320b_74d5db1d9a074271ac11a0fe043d86cf.mp3";
-   reproducir.pause();
-   reproducir.loop = false;
-      reproducir.controls = false;
-  }
+ function stopAudio(audio) {
+    audio.pause();
+    audio.currentTime = 0;
+}
 
 
 
@@ -178,9 +174,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   startBtn.addEventListener('click', () => {
     if (timerId) {
+      stopAudio(audio)
       clearInterval(timerId)
       timerId = null
-      accionPause()
+      
     } else {
       accionPlay()
       draw()
