@@ -1,3 +1,0 @@
-# Fletris
-
-SUPER FLETRIS
